@@ -22,7 +22,8 @@ function output {
 # While loop
 while [[ $filecount -ne $guesscount ]]
   do
-	read -p "Guess how many files are in the current directory? " guesscount
+	echo "Guess how many files are in the current directory? "
+	read -p "Enter your Guess: " guesscount
 	output
 	echo ""
 done
