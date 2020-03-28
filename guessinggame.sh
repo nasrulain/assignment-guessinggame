@@ -3,7 +3,7 @@
 # Peer graded assignment - The Unix Workbench by Coursera/John's Hopkins University
 
 # Counting  no. of files in the directory
-filecount=$(ls -1 | wc -l)
+filecount=$(ls -a | wc -l)
 
 # Function with IF condition to check guessed value
 function output {
@@ -25,5 +25,5 @@ while [[ $filecount -ne $guesscount ]]
 	read -p "Guess how many files are in the current directory? " guesscount
 	output
 	echo ""
-	done
+done
 
