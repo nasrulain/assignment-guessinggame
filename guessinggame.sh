@@ -3,9 +3,8 @@
 # Peer graded assignment - The Unix Workbench by Coursera/John's Hopkins University
 
 # Counting  no. of files in the directory
-filecount=$(ls -a | wc -l)
+filecount=$(ls -A | wc -l)
 num="^[0-9]+$"
-alpha="^[a-zA-Z]+$"
 # Function with IF condition to check guessed value
 function output {
 	    	  if [[ $guesscount -lt $filecount ]]
@@ -26,12 +25,12 @@ while [[ $filecount -ne $guesscount ]]
 	read -p "Enter your Guess: " guesscount
 		if  [[ $guesscount =~ $num ]]
 		then
-		output
-		elif [[ $guesscount =~ $alpha ]]
+			output
+		elif ! [[ $guesscount =~ $num ]]
 		then
-		echo "You have entered alpha value. Re-enter only integer value"
+			echo "You have entered alpha value. Re-enter only integer value"
 		else
-		echo "You have entered special characters. Enter only valid integer"
+			echo "You have entered special characters. Enter only valid integer"
 		fi
 	echo ""
 done
